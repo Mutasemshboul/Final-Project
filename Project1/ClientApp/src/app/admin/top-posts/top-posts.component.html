@@ -1,0 +1,713 @@
+<!--
+=========================================================
+* Soft UI Dashboard - v1.0.6
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard
+* Copyright 2022 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://www.creative-tim.com/license)
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="../../../assets/assetsAdmin/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../../../assets/assetsAdmin/img/favicon.png">
+  <link href="../../../assets/assetsAdmin/scss/soft-ui-dashboard/bootstrap/bootstrap-utilities.scss" />
+  <link href="../../../assets/assetsAdmin/scss/soft-ui-dashboard/bootstrap/bootstrap.scss" />
+
+  <title>
+    Soft UI Dashboard by Creative Tim
+  </title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <!-- Nucleo Icons -->
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <!-- CSS Files -->
+  <style>
+    .row {
+      --bs-gutter-x: 1.5rem;
+      --bs-gutter-y: 0;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: calc(-1 * var(--bs-gutter-y));
+      margin-right: calc(-.5 * var(--bs-gutter-x));
+      margin-left: calc(-.5 * var(--bs-gutter-x));
+    }
+
+      .row > * {
+        flex-shrink: 0;
+        width: 100%;
+        max-width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * .5);
+        padding-left: calc(var(--bs-gutter-x) * .5);
+        margin-top: var(--bs-gutter-y);
+      }
+
+    .col {
+      flex: 1 0 0%;
+    }
+
+    .row-cols-auto > * {
+      flex: 0 0 auto;
+      width: auto;
+    }
+
+    .row-cols-1 > * {
+      flex: 0 0 auto;
+      width: 100%;
+    }
+
+    .row-cols-2 > * {
+      flex: 0 0 auto;
+      width: 50%;
+    }
+
+    .row-cols-3 > * {
+      flex: 0 0 auto;
+      width: 33.333333%;
+    }
+
+    .row-cols-4 > * {
+      flex: 0 0 auto;
+      width: 25%;
+    }
+
+    .row-cols-5 > * {
+      flex: 0 0 auto;
+      width: 20%;
+    }
+
+    .row-cols-6 > * {
+      flex: 0 0 auto;
+      width: 16.666667%;
+    }
+
+    .col-auto {
+      flex: 0 0 auto;
+      width: auto;
+    }
+
+    .col-1 {
+      flex: 0 0 auto;
+      width: 8.333333%;
+    }
+
+    .col-2 {
+      flex: 0 0 auto;
+      width: 16.666667%;
+    }
+
+    .col-3 {
+      flex: 0 0 auto;
+      width: 25%;
+    }
+
+    .col-4 {
+      flex: 0 0 auto;
+      width: 33.333333%;
+    }
+
+    .col-5 {
+      flex: 0 0 auto;
+      width: 41.666667%;
+    }
+
+    .col-6 {
+      flex: 0 0 auto;
+      width: 50%;
+    }
+
+    .col-7 {
+      flex: 0 0 auto;
+      width: 58.333333%;
+    }
+
+    .col-8 {
+      flex: 0 0 auto;
+      width: 66.666667%;
+    }
+
+    .col-9 {
+      flex: 0 0 auto;
+      width: 75%;
+    }
+
+    .col-10 {
+      flex: 0 0 auto;
+      width: 83.333333%;
+    }
+
+    .col-11 {
+      flex: 0 0 auto;
+      width: 91.666667%;
+    }
+
+    .col-12 {
+      flex: 0 0 auto;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body class="g-sidenav-show">
+  <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
+    <div class="card" style="height:100%">
+      <div class="card-body">
+        <div class="sidenav-header">
+
+          <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+          <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html " target="_blank">
+            <img src="../../../assets/assetsAdmin/img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo" style="width:100%">
+          </a>
+        </div>
+        <hr class="horizontal dark mt-0">
+        <div class="collapse navbar-collapse  w-auto dropdown_scrollbar" data-simplebar id="sidenav-collapse-main" style="height:100%;max-height:500px">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link  " [routerLink]="['/admin/dashboard']">
+                <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center" style="background-image :linear-gradient(310deg, #141727 0%, #3A416F 100%) ">
+
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" style="color:white" viewBox="0 0 576 512"><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" /></svg>
+                </div>
+                <span class="nav-link-text ms-1">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item mt-3">
+              <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Design</h6>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/admin/homedesign']">
+                <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center" style="background-image :linear-gradient(310deg, #141727 0%, #3A416F 100%) ">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" style="color:white" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M264.5 5.2c14.9-6.9 32.1-6.9 47 0l218.6 101c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 149.8C37.4 145.8 32 137.3 32 128s5.4-17.9 13.9-21.8L264.5 5.2zM476.9 209.6l53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 277.8C37.4 273.8 32 265.3 32 256s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0l152-70.2zm-152 198.2l152-70.2 53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 405.8C37.4 401.8 32 393.3 32 384s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0z" /></svg>
+                </div>
+                <span class="nav-link-text ms-1">Home</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/admin/aboutusdesign']">
+                <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center" style="background-image :linear-gradient(310deg, #141727 0%, #3A416F 100%) ">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" style="color:white" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M264.5 5.2c14.9-6.9 32.1-6.9 47 0l218.6 101c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 149.8C37.4 145.8 32 137.3 32 128s5.4-17.9 13.9-21.8L264.5 5.2zM476.9 209.6l53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 277.8C37.4 273.8 32 265.3 32 256s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0l152-70.2zm-152 198.2l152-70.2 53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 405.8C37.4 401.8 32 393.3 32 384s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0z" /></svg>
+                </div>
+                <span class="nav-link-text ms-1">About us</span>
+              </a>
+            </li>
+            <li class="nav-item mt-3">
+              <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Reports</h6>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  " [routerLink]="['/admin/revenuereport']">
+                <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center" style="background-image :linear-gradient(310deg, #141727 0%, #3A416F 100%) ">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" style="color:white" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M32 32c17.7 0 32 14.3 32 32V400c0 8.8 7.2 16 16 16H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H80c-44.2 0-80-35.8-80-80V64C0 46.3 14.3 32 32 32zM160 224c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32s-32-14.3-32-32V256c0-17.7 14.3-32 32-32zm128-64V320c0 17.7-14.3 32-32 32s-32-14.3-32-32V160c0-17.7 14.3-32 32-32s32 14.3 32 32zm64 32c17.7 0 32 14.3 32 32v96c0 17.7-14.3 32-32 32s-32-14.3-32-32V224c0-17.7 14.3-32 32-32zM480 96V320c0 17.7-14.3 32-32 32s-32-14.3-32-32V96c0-17.7 14.3-32 32-32s32 14.3 32 32z" /></svg>
+                </div>
+                <span class="nav-link-text ms-1">Revenue report</span>
+              </a>
+            </li>
+            <li class="nav-item mt-3">
+              <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Mail center</h6>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  " [routerLink]="['/admin/mailbox']">
+                <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center" style="background-image :linear-gradient(310deg, #141727 0%, #3A416F 100%) ">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" style="color:white" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M121 32C91.6 32 66 52 58.9 80.5L1.9 308.4C.6 313.5 0 318.7 0 323.9V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V323.9c0-5.2-.6-10.4-1.9-15.5l-57-227.9C446 52 420.4 32 391 32H121zm0 64H391l48 192H387.8c-12.1 0-23.2 6.8-28.6 17.7l-14.3 28.6c-5.4 10.8-16.5 17.7-28.6 17.7H195.8c-12.1 0-23.2-6.8-28.6-17.7l-14.3-28.6c-5.4-10.8-16.5-17.7-28.6-17.7H73L121 96z" /></svg>
+                </div>
+                <span class="nav-link-text ms-1">Inbox</span>
+              </a>
+            </li>
+            <li class="nav-item mt-3">
+              <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Services</h6>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  " [routerLink]="['/admin/manageservice']">
+                <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center" style="background-image :linear-gradient(310deg, #141727 0%, #3A416F 100%) ">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" style="color:white" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M448 160H320V128H448v32zM48 64C21.5 64 0 85.5 0 112v64c0 26.5 21.5 48 48 48H464c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zM448 352v32H192V352H448zM48 288c-26.5 0-48 21.5-48 48v64c0 26.5 21.5 48 48 48H464c26.5 0 48-21.5 48-48V336c0-26.5-21.5-48-48-48H48z" /></svg>
+                </div>
+                <span class="nav-link-text ms-1">Manage services</span>
+              </a>
+            </li>
+            <li class="nav-item mt-3">
+              <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Activities</h6>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  " [routerLink]="['/admin/useractivities']">
+                <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center" style="background-image :linear-gradient(310deg, #141727 0%, #3A416F 100%) ">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" style="color:white" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M287.6 .1c-19.7 0-38.3 9.1-50.4 24.6L205.9 64.9c-17.9 23-46 35.6-75.1 33.7L59.1 94c-13.5-.9-26.9 3.2-37.7 11.6C-1.3 123.2-6.7 155.2 8.8 179.4l44.5 69.2c7.1 11 10.8 23.8 10.8 36.8c0 11.9-3.1 23.5-9 33.8L27.4 367.7c-10 17.5-10 39.1 0 56.6c12.1 21.2 36.4 32.3 60.4 27.7l67-13c5.5-1.1 11.2-1.6 16.8-1.6H180c20.9 0 41 7.4 56.9 20.9l45 38.2c11.8 10 26.9 15.6 42.4 15.6c37.8 0 67.7-31.9 65.4-69.6l-3.1-50.6c-1-16.8 6.6-32.9 20.1-42.8l82.5-60.2c14.2-10.4 22.7-27 22.7-44.6c0-23.2-14.5-43.9-36.3-51.8l-58.2-21.2c-24.4-8.9-42.9-29.1-49.7-54.2L349.3 47.4C341.8 19.5 316.5 .1 287.6 .1z" /></svg>
+                </div>
+                <span class="nav-link-text ms-1">User activities</span>
+              </a>
+            </li>
+            <li class="nav-item mt-3">
+              <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Content control</h6>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  " [routerLink]="['/admin/report']">
+                <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center" style="background-image :linear-gradient(310deg, #141727 0%, #3A416F 100%) ">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" style="color:white" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M58.9 42.1c3-6.1 9.6-9.6 16.3-8.7L320 64 564.8 33.4c6.7-.8 13.3 2.7 16.3 8.7l41.7 83.4c9 17.9-.6 39.6-19.8 45.1L439.6 217.3c-13.9 4-28.8-1.9-36.2-14.3L320 64 236.6 203c-7.4 12.4-22.3 18.3-36.2 14.3L37.1 170.6c-19.3-5.5-28.8-27.2-19.8-45.1L58.9 42.1zM321.1 128l54.9 91.4c14.9 24.8 44.6 36.6 72.5 28.6L576 211.6v167c0 22-15 41.2-36.4 46.6l-204.1 51c-10.2 2.6-20.9 2.6-31 0l-204.1-51C79 419.7 64 400.5 64 378.5v-167L191.6 248c27.8 8 57.6-3.8 72.5-28.6L318.9 128h2.2z" /></svg>
+                </div>
+                <span class="nav-link-text ms-1">Post reports</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  " [routerLink]="['/admin/top10posts']">
+                <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center" style="background-image :linear-gradient(310deg, #141727 0%, #3A416F 100%) ">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" style="color:white" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M353.8 54.1L330.2 6.3c-3.9-8.3-16.1-8.6-20.4 0L286.2 54.1l-52.3 7.5c-9.3 1.4-13.3 12.9-6.4 19.8l38 37-9 52.1c-1.4 9.3 8.2 16.5 16.8 12.2l46.9-24.8 46.6 24.4c8.6 4.3 18.3-2.9 16.8-12.2l-9-52.1 38-36.6c6.8-6.8 2.9-18.3-6.4-19.8l-52.3-7.5zM256 256c-17.7 0-32 14.3-32 32V480c0 17.7 14.3 32 32 32H384c17.7 0 32-14.3 32-32V288c0-17.7-14.3-32-32-32H256zM32 320c-17.7 0-32 14.3-32 32V480c0 17.7 14.3 32 32 32H160c17.7 0 32-14.3 32-32V352c0-17.7-14.3-32-32-32H32zm416 96v64c0 17.7 14.3 32 32 32H608c17.7 0 32-14.3 32-32V416c0-17.7-14.3-32-32-32H480c-17.7 0-32 14.3-32 32z" /></svg>
+                </div>
+                <span class="nav-link-text ms-1">Top 10 posts</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  " [routerLink]="['/admin/managestory']">
+                <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center" style="background-image :linear-gradient(310deg, #141727 0%, #3A416F 100%) ">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" style="color:white" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M32 32C32 14.3 46.3 0 64 0H256c17.7 0 32 14.3 32 32s-14.3 32-32 32H64C46.3 64 32 49.7 32 32zM0 160c0-35.3 28.7-64 64-64H256c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V160zm96 64c-17.7 0-32 14.3-32 32v96c0 17.7 14.3 32 32 32H224c17.7 0 32-14.3 32-32V256c0-17.7-14.3-32-32-32H96z" /></svg>
+                </div>
+                <span class="nav-link-text ms-1">Manage stories</span>
+              </a>
+            </li>
+            <li class="nav-item mt-3">
+              <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">
+                Feedback center
+              </h6>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  " [routerLink]="['/admin/feedback']">
+                <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center" style="background-image :linear-gradient(310deg, #141727 0%, #3A416F 100%) ">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" style="color:white" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M215.4 96H144 107.8 96v8.8V144v40.4 89L.2 202.5c1.6-18.1 10.9-34.9 25.7-45.8L48 140.3V96c0-26.5 21.5-48 48-48h76.6l49.9-36.9C232.2 3.9 243.9 0 256 0s23.8 3.9 33.5 11L339.4 48H416c26.5 0 48 21.5 48 48v44.3l22.1 16.4c14.8 10.9 24.1 27.7 25.7 45.8L416 273.4v-89V144 104.8 96H404.2 368 296.6 215.4zM0 448V242.1L217.6 403.3c11.1 8.2 24.6 12.7 38.4 12.7s27.3-4.4 38.4-12.7L512 242.1V448v0c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64v0zM176 160H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H176c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H176c-8.8 0-16-7.2-16-16s7.2-16 16-16z" /></svg>
+                </div>
+                <span class="nav-link-text ms-1">Feedbacks</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl mt-2" id="navbarBlur" navbar-scroll="true">
+      <div class="container-fluid py-1 px-3">
+        <nav aria-label="breadcrumb">
+
+          <h6 class="font-weight-bolder mb-0">Top 10 Posts</h6>
+        </nav>
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+
+          <ul class="navbar-nav  justify-content-end">
+
+            <li class="nav-item d-flex align-items-center">
+              <div class="header_widgets">
+
+                <a href="#">
+                  <img src="../../../../../Resources/Images/user/profile/{{userData.profilePath}}" class="is_avatar" alt="">
+                </a>
+                <div uk-drop="mode: click;offset:5" class="header_dropdown profile_dropdown">
+
+                  <a [routerLink]="['user/timeline']" class="user">
+                    <div class="user_avatar">
+                      <img src="../../../../../Resources/Images/user/profile/{{userData.profilePath}}" alt="">
+                    </div>
+                    <div class="user_name">
+                      <div class="capitalize"> {{userData.firstName}} {{userData.lastName}} </div>
+                      <span class="font-weight-bold"> Admin</span>
+                    </div>
+                  </a>
+                  <hr>
+                  <a href="page-setting.html">
+                    <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path></svg>
+                    My Account
+                  </a>
+                  <a href="groups.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z" clip-rule="evenodd" />
+                    </svg>
+                    Manage Pages
+                  </a>
+                  <a href="pages-setting.html">
+                    <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"></path><path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd"></path></svg>
+                    My Billing
+                  </a>
+                  <a href="#" id="night-mode" class="btn-night-mode">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                    </svg>
+                    Night mode
+                    <span class="btn-night-mode-switch">
+                      <span class="uk-switch-button"></span>
+                    </span>
+                  </a>
+                  <a href="#" (click)="logOut()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                    </svg>
+                    Log Out
+                  </a>
+
+
+                </div>
+              </div>
+            </li>
+
+
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+    <div class="container-fluid py-2">
+      
+      <div class="row">
+        <div class="card">
+          <div class="card-body px-0 pb-2">
+            <div class="row" style="margin-left:5px">
+              <div class="col-lg-6 col-7">
+                <h6>Top 10 Posts</h6>
+              </div>
+              <div class="col-lg-6 col-5 my-auto text-end">
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="table align-items-center mb-0">
+                <thead>
+                  <tr>
+                    <th style="padding-left:40px" class="text-uppercase text-gray-700 dark:text-gray-100 text-xs font-weight-bolder opacity-7">Post Id</th>
+                    <th class="text-center text-uppercase text-gray-700 dark:text-gray-100 text-xs font-weight-bolder opacity-7 ps-2">Seen</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let post of top10posts">
+                    <td>
+                      <h6 class="mb-0 ml-3 text-sm">
+                        <i class="icon-feather-chevrons-right mr-3 text-danger"></i>
+                        {{post.id}}
+                      </h6>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <span class="text-xs font-weight-bold text-gray-700 dark:text-gray-100">
+                        {{post.summation}}
+                        <span *ngIf="post.summation != 1" style="font-family:monospace" class="ml-2 font-weight-bolder">Times</span>
+                        <span *ngIf="post.summation == 1" style="font-family:monospace" class="ml-3 font-weight-bolder">Time</span>
+                      </span>
+                    </td>
+                    <td class="align-middle text-center">
+                      <a style="cursor:pointer" (click)="GetPostById(post.id)" id="Details-btn-{{post.id}}" uk-toggle="" class="text-secondary font-weight-bolder text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                       <i style="font-size:1.02rem" class="icon-feather-eye mr-1 mt-3">  <span class="ml-1 text-secondary font-weight-bolder">Show</span></i> 
+                      </a>
+                    </td>
+                    {{setUkToggleDetails(post.id)}}
+                    <div id="Details-{{post.id}}" uk-modal>
+                      <div class="uk-modal-body uk-modal-dialog rounded-md shadow-2xl">
+                        <h5 class="mb-2 uk-modal-title">Post details</h5>
+                        <div class="card lg:mx-0 uk-animation-slide-bottom-small">
+                          <div class="flex justify-between items-center lg:p-4 p-2.5">
+                            <div class="flex flex-1 items-center space-x-4">
+
+                              <div class="flex-1 font-semibold capitalize">
+                                <div class="text-gray-700 flex items-center space-x-2">
+                                  {{this.postt.postDate | date}}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div *ngIf="this.postt.content != null" class="p-5 pt-0">
+                            {{this.postt.content}}
+                          </div>
+
+                          <div *ngIf="SplitImages(this.postt.item) != 'null' " uk-lightbox>
+                            <div *ngIf="SplitImages(this.postt.item).length == 1" class="grid grid-cols-1 gap-2 px-4">
+                              <a *ngIf="isVideo(SplitImages(this.postt.item)[0]) == false" href="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[0]}}">
+                                <img src="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[0]}}" alt="" class="rounded-md w-full h-full">
+                              </a>
+                              <a *ngIf="isVideo(SplitImages(this.postt.item)[0]) == true" href="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[0]}}">
+                                <video class="rounded-md w-full h-full" controls>
+                                  <source src="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[0]}}" type="video/mp4" />
+                                </video>
+                              </a>
+
+                            </div>
+                            <div *ngIf="SplitImages(this.postt.item).length == 2" class="grid grid-cols-2 gap-2 px-4">
+                              <a *ngIf="isVideo(SplitImages(this.postt.item)[0]) == false" href="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[0]}}">
+                                <img src="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[0]}}" alt="" class="rounded-md w-full h-full">
+                              </a>
+                              <a *ngIf="isVideo(SplitImages(this.postt.item)[0]) == true" href="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[0]}}">
+                                <video class="rounded-md w-full h-full" controls>
+                                  <source src="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[0]}}" type="video/mp4" />
+                                </video>
+                              </a>
+                              <a *ngIf="isVideo(SplitImages(this.postt.item)[1]) == false" href="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[1]}}">
+                                <img src="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[1]}}" alt="" class="rounded-md w-full h-full">
+                              </a>
+                              <a *ngIf="isVideo(SplitImages(this.postt.item)[1]) == true" href="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[1]}}">
+                                <video class="rounded-md w-full h-full" controls>
+                                  <source src="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[1]}}" type="video/mp4" />
+                                </video>
+                              </a>
+                            </div>
+                            <div *ngIf="SplitImages(this.postt.item).length == 3" class="grid grid-cols-2 gap-2 px-4">
+                              <a *ngIf="isVideo(SplitImages(this.postt.item)[0]) == false" href="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[0]}}" class="col-span-2">
+                                <img src="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[0]}}" alt="" class="rounded-md w-full lg:h-44 object-cover">
+                              </a>
+                              <a *ngIf="isVideo(SplitImages(this.postt.item)[0]) == true" href="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[0]}}" class="col-span-2">
+                                <video class="rounded-md w-full lg:h-44 object-cover" controls>
+                                  <source src="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[0]}}" type="video/mp4" />
+                                </video>
+                              </a>
+                              <a *ngIf="isVideo(SplitImages(this.postt.item)[1]) == false" href="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[1]}}">
+                                <img src="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[1]}}" alt="" class="rounded-md w-full h-full">
+                              </a>
+                              <a *ngIf="isVideo(SplitImages(this.postt.item)[1]) == true" href="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[1]}}">
+                                <video class="rounded-md w-full h-full" controls>
+                                  <source src="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[1]}}" type="video/mp4" />
+                                </video>
+                              </a>
+                              <a *ngIf="isVideo(SplitImages(this.postt.item)[2]) == false" href="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[2]}}">
+                                <img src="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[2]}}" alt="" class="rounded-md w-full h-full">
+                              </a>
+                              <a *ngIf="isVideo(SplitImages(this.postt.item)[2]) == true" href="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[2]}}">
+                                <video class="rounded-md w-full h-full" controls>
+                                  <source src="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[2]}}" type="video/mp4" />
+                                </video>
+                              </a>
+                            </div>
+                            <div *ngIf="SplitImages(this.postt.item).length == 4" class="grid grid-cols-2 gap-2 px-4">
+                              <a *ngIf="isVideo(SplitImages(this.postt.item)[0]) == false" href="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[0]}}">
+                                <img src="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[0]}}" alt="" class="rounded-md w-full h-full">
+                              </a>
+                              <a *ngIf="isVideo(SplitImages(this.postt.item)[0]) == true" href="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[0]}}">
+                                <video class="rounded-md w-full h-full" controls>
+                                  <source src="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[0]}}" type="video/mp4" />
+                                </video>
+                              </a>
+                              <a *ngIf="isVideo(SplitImages(this.postt.item)[1]) == false" href="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[1]}}">
+                                <img src="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[1]}}" alt="" class="rounded-md w-full h-full">
+                              </a>
+                              <a *ngIf="isVideo(SplitImages(this.postt.item)[1]) == true" href="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[1]}}">
+                                <video class="rounded-md w-full h-full" controls>
+                                  <source src="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[1]}}" type="video/mp4" />
+                                </video>
+                              </a>
+                              <a *ngIf="isVideo(SplitImages(this.postt.item)[2]) == false" href="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[2]}}">
+                                <img src="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[2]}}" alt="" class="rounded-md w-full h-full">
+                              </a>
+                              <a *ngIf="isVideo(SplitImages(this.postt.item)[2]) == true" href="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[2]}}">
+                                <video class="rounded-md w-full h-full" controls>
+                                  <source src="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[2]}}" type="video/mp4" />
+                                </video>
+                              </a>
+                              <a *ngIf="isVideo(SplitImages(this.postt.item)[3]) == false" href="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[3]}}">
+                                <img src="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[3]}}" alt="" class="rounded-md w-full h-full">
+                              </a>
+                              <a *ngIf="isVideo(SplitImages(this.postt.item)[3]) == true" href="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[3]}}">
+                                <video class="rounded-md w-full h-full" controls>
+                                  <source src="../../../../../Resources/Images/user/post/{{SplitImages(this.postt.item)[3]}}" type="video/mp4" />
+                                </video>
+                              </a>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div style="display:flex;justify-content:center" class="mt-2 px-0 space-x-1">
+                          <a class="btn bg-gradient-secondary mt-3 w-25 uk-modal-close" href="#">Close</a>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!--   Core JS Files   -->
+  <script src="../../../assets/assetsAdmin/js/core/popper.min.js"></script>
+  <script src="../../../assets/assetsAdmin/js/core/bootstrap.min.js"></script>
+  <script src="../../../assets/assetsAdmin/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="../../../assets/assetsAdmin/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="../../../assets/assetsAdmin/js/plugins/chartjs.min.js"></script>
+  <script>
+    var ctx = document.getElementById("chart-bars").getContext("2d");
+    new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [{
+          label: "Sales",
+          tension: 0.4,
+          borderWidth: 0,
+          borderRadius: 4,
+          borderSkipped: false,
+          backgroundColor: "#fff",
+          data: [450, 200, 100, 220, 500, 100, 400, 230, 500],
+          maxBarThickness: 6
+        },],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false,
+          }
+        },
+        interaction: {
+          intersect: false,
+          mode: 'index',
+        },
+        scales: {
+          y: {
+            grid: {
+              drawBorder: false,
+              display: false,
+              drawOnChartArea: false,
+              drawTicks: false,
+            },
+            ticks: {
+              suggestedMin: 0,
+              suggestedMax: 500,
+              beginAtZero: true,
+              padding: 15,
+              font: {
+                size: 14,
+                family: "Open Sans",
+                style: 'normal',
+                lineHeight: 2
+              },
+              color: "#fff"
+            },
+          },
+          x: {
+            grid: {
+              drawBorder: false,
+              display: false,
+              drawOnChartArea: false,
+              drawTicks: false
+            },
+            ticks: {
+              display: false
+            },
+          },
+        },
+      },
+    });
+    var ctx2 = document.getElementById("chart-line").getContext("2d");
+    var gradientStroke1 = ctx2.createLinearGradient(0, 230, 0, 50);
+    gradientStroke1.addColorStop(1, 'rgba(203,12,159,0.2)');
+    gradientStroke1.addColorStop(0.2, 'rgba(72,72,176,0.0)');
+    gradientStroke1.addColorStop(0, 'rgba(203,12,159,0)'); //purple colors
+    var gradientStroke2 = ctx2.createLinearGradient(0, 230, 0, 50);
+    gradientStroke2.addColorStop(1, 'rgba(20,23,39,0.2)');
+    gradientStroke2.addColorStop(0.2, 'rgba(72,72,176,0.0)');
+    gradientStroke2.addColorStop(0, 'rgba(20,23,39,0)'); //purple colors
+    new Chart(ctx2, {
+      type: "line",
+      data: {
+        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [{
+          label: "Mobile apps",
+          tension: 0.4,
+          borderWidth: 0,
+          pointRadius: 0,
+          borderColor: "#cb0c9f",
+          borderWidth: 3,
+          backgroundColor: gradientStroke1,
+          fill: true,
+          data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+          maxBarThickness: 6
+        },
+        {
+          label: "Websites",
+          tension: 0.4,
+          borderWidth: 0,
+          pointRadius: 0,
+          borderColor: "#3A416F",
+          borderWidth: 3,
+          backgroundColor: gradientStroke2,
+          fill: true,
+          data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
+          maxBarThickness: 6
+        },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false,
+          }
+        },
+        interaction: {
+          intersect: false,
+          mode: 'index',
+        },
+        scales: {
+          y: {
+            grid: {
+              drawBorder: false,
+              display: true,
+              drawOnChartArea: true,
+              drawTicks: false,
+              borderDash: [5, 5]
+            },
+            ticks: {
+              display: true,
+              padding: 10,
+              color: '#b2b9bf',
+              font: {
+                size: 11,
+                family: "Open Sans",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+          x: {
+            grid: {
+              drawBorder: false,
+              display: false,
+              drawOnChartArea: false,
+              drawTicks: false,
+              borderDash: [5, 5]
+            },
+            ticks: {
+              display: true,
+              color: '#b2b9bf',
+              padding: 20,
+              font: {
+                size: 11,
+                family: "Open Sans",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+        },
+      },
+    });</script>
+  <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }</script>
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="../../../assets/assetsAdmin/js/soft-ui-dashboard.min.js?v=1.0.6"></script>
+</body>
+</html>

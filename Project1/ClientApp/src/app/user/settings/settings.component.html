@@ -1,0 +1,284 @@
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+<script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+<style>
+  .mask {
+    position: absolute;
+    background-size: cover;
+    background-position: center center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+  }
+
+  .shadow-xl {
+    box-shadow: 0 23px 45px -11px rgba(20, 20, 20, 0.25) !important;
+  }
+
+  .overflow-hidden {
+    overflow: hidden !important;
+  }
+
+  .position-relative {
+    position: relative !important;
+  }
+
+  .border-radius-xl {
+    border-radius: 1rem;
+  }
+
+  .bg-gradient-dark {
+    background-image: linear-gradient(310deg, #141727 0%, #3A416F 100%);
+  }
+
+  .card-body {
+    flex: 1 1 auto;
+    padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+    color: var(--bs-card-color);
+  }
+
+  .d-flex {
+    display: flex !important;
+  }
+
+  .me-4 {
+    margin-right: 1.5rem !important;
+  }
+</style>
+<!-- Main Contents -->
+<div class="main_content">
+  
+  <div class="mcontainer">
+    <div *ngIf="this.showSuccessCard" class="w-full relative left-0" style="display: flex; justify-content: end; position: absolute;top:75px;z-index:3 ">
+      <div style="width:23rem" class="bg-green-500 border p-4 relative rounded-md  left-0 top-0" uk-alert>
+        <h3 class="text-lg font-semibold text-white">Message</h3>
+        <p class="text-white text-opacity-75">Card adedd successfully</p>
+      </div>
+    </div>
+    <div *ngIf="this.showDeletedCard" class="w-full relative left-0" style="display: flex; justify-content: end; position: absolute;top:75px;z-index:3 ">
+      <div style="width:23rem" class="bg-red-500 border p-4 relative rounded-md  left-0 top-0" uk-alert>
+        <h3 class="text-lg font-semibold text-white">Message</h3>
+        <p class="text-white text-opacity-75">Card deleted successfully</p>
+      </div>
+    </div>
+    <div *ngIf="this.showSuccess" class="w-full relative left-0" style="display: flex; justify-content: end; position: sticky;top:75px;z-index:3">
+      <div style="width:23rem" class="bg-green-500 border p-4 relative rounded-md  left-0 top-0" uk-alert>
+        <h3 class="text-lg font-semibold text-white">Message</h3>
+        <p class="text-white text-opacity-75">Profile updated successfully</p>
+      </div>
+    </div>
+
+    <div class="mb-6">
+      <h2 class="text-2xl font-semibold"> Settings </h2>
+      <nav class="responsive-nav border-b md:m-0 -mx-4">
+        <ul uk-switcher="connect: #form-type; animation: uk-animation-fade">
+          <li><a href="#" class="lg:px-2"> Profile</a></li>
+          <li><a href="#" class="lg:px-2"> Billing </a></li>
+          <li><a href="#" class="lg:px-2"> Account </a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="uk-switcher lg:mt-8 mt-4" id="form-type">
+
+      <div class="grid lg:grid-cols-3 mt-12 gap-8">
+        <div>
+          <h3 class="text-xl mb-2 font-semibold"> Profile</h3>
+          <p> You can update your profile information here</p>
+        </div>
+        <div class="bg-white rounded-md lg:shadow-md shadow col-span-2 lg:mx-16">
+          <form [formGroup]="UserForm" enctype="multipart/form-data">
+            <div class="grid grid-cols-2 gap-3 lg:p-6 p-4">
+              <div>
+                <label for=""> First name</label>
+                <input name="FirstName" formControlName="FirstName" type="text" value="{{userData.firstName}}" class="shadow-none with-border">
+              </div>
+              <div>
+                <label for=""> Last name</label>
+                <input name="LastName" formControlName="LastName" type="text" value="{{userData.lastName}}" class="shadow-none with-border">
+              </div>
+              <div class="uplode-div">
+                <label for="">Profile Image</label>
+                <input formControlName="ProfilePath" (change)="uploadProfileImg(file.files)" #file style="padding-left: 0px;" type="file" class="uploade" accept="image/*" />
+              </div>
+              <div class="uplode-div">
+                <label for="">Cover Iamge</label>
+                <input formControlName="CoverPath" (change)="uploadCoverImg(file1.files)" #file1 style="padding-left: 0px;" type="file" class="uploade" accept="image/*" />
+              </div>
+              <div class="col-span-2">
+                <label for="">Bio</label>
+                <textarea name="Bio" formControlName="Bio" value="{{userData.bio}}" id="bio" rows="3" class="with-border"></textarea>
+              </div>
+              <div>
+                <label for=""> Location</label>
+                <select id="location" formControlName="Address" class="form-select shadow-none  with-border ">
+                  <option value="Amman , Jordan">Amman , Jordan</option>
+                  <option value="Irbd , Jordan">Irbd , Jordan</option>
+                  <option value="Zarqa , Jordan">Zarqa , Jordan</option>
+                  <option value="Madaba , Jordan">Madaba , Jordan</option>
+                  <option value="Al-Mafraq , Jordan">Al-Mafraq , Jordan</option>
+                  <option value="Jerash , Jordan">Jerash , Jordan</option>
+                  <option value="Ma'an , Jorda">Ma'an , Jordan</option>
+                  <option value="At-Tafila , Jordan">At-Tafila , Jordan</option>
+                  <option value="Al-Karak , Jordan">Al-Karak , Jordan</option>
+                  <option value="Aqaba , Jordan">Aqaba , Jordan</option>
+                  <option value="As-Salt , Jordan">As-Salt , Jordan</option>
+                  <option value="Ajloun , Jordan">Ajloun , Jordan</option>
+                </select>
+              </div>
+              <div>
+                <label for=""> Relationship </label>
+                <select id="relationship" formControlName="Relationship" class="form-select shadow-none  with-border ">
+                  <option value="Single">Single</option>
+                  <option value="In a relationship">In a relationship</option>
+                  <option value="Married">Married</option>
+                  <option value="Engaged">Engaged</option>
+                </select>
+              </div>
+            </div>
+            <div class="bg-gray-10 p-6 pt-0 flex justify-content-center space-x-3">
+              <button (click)="onCreate()" type="button" class="button bg-gradient-dark"> Update </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 mt-12 gap-4">
+
+        <div>
+          <h3 class="text-xl mb-2 font-semibold"> Billing</h3>
+          <p> You can manage your cards here</p>
+        </div>
+        <div class="bg-white rounded-md lg:shadow-lg shadow col-span-2 lg:p-6 p-4 lg:mx-16">
+
+          <div class="space-y-3">
+            <div style="padding:0px" *ngFor="let v of visa" class="flex justify-between items-center lg:shadow-lg shadow col-span-2 lg:p-6 p-4 lg:mx-16">
+              <div class="col-span-2">
+                <div class="card bg-transparent shadow-xl col-span-2">
+                  <div class="col-span-2 overflow-hidden position-relative border-radius-xl" style="background-image: url('../../../assets/assets/Img/card/curved14.jpg');">
+                    <span style="position: absolute; background-size: cover; background-position: center center; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.8; background-image: linear-gradient(310deg, #141727 0%, #3A416F 100%);"></span>
+                    <div style="padding:14px;" class="card-body position-relative z-index-1 p-3 col-span-2">
+                      <i class="icon-feather-wifi"></i>
+                      <h5 class="text-white mt-4 mb-5 pb-2">{{chunkString(v.cardNumber)}}</h5>
+                      <div class="d-flex">
+                        <div class="d-flex">
+                          <div class="me-4">
+                            <p class="text-white text-sm opacity-8 mb-0">Card Holder</p>
+                            <h6 class="text-white mb-0">{{v.holderName}}</h6>
+                          </div>
+                          <div>
+                            <p class="text-white text-sm opacity-8 mb-0">Expires</p>
+                            <h6 class="text-white mb-0">{{v.expiryMonth}}/{{v.expiryYear}}</h6>
+                          </div>
+                        </div>
+                        <div class="ms-auto w-20 d-flex align-items-end justify-content-end">
+                          <img style="width:60% !important" class="w-60 mt-2" src="../../../assets/assets/Img/card/mastercard.png" alt="logo">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-column">
+                <div class="font-bold" style="margin-bottom:20px">Balance : {{v.balance}}</div>
+                <div class="flex">
+                  <div class="switch-container">
+                    <label class="switch"><input type="checkbox"><span class="switch-button"></span> </label>
+                  </div>
+                  <button id="delete-btn-{{v.id}}" uk-toggle="" type="button" class="button bg-gradient-dark"> Delete </button>
+                </div>
+                {{setUkToggleDelete((v.id))}}
+              </div>
+              <hr>
+              <div id="delete-{{v.id}}" uk-modal>
+                <div class="uk-modal-body uk-modal-dialog rounded-md shadow-2xl">
+                  <h2 class="mb-2 uk-modal-title">Alert</h2>
+                  <p>Are you sure you want to delete this card <span class="font-bold font-semibold">{{chunkString(v.cardNumber)}}</span> ?</p>
+                  <div class="uk-modal-footer text-right bg-gray-200 dark:bg-gray-900 mt-6 px-0 space-x-1">
+                    <button class="button gray uk-modal-close" type="button">Cancel</button>
+                    <button style="background-color: #e82a35" (click)="DeleteCard(v.id)" class="button" type="button">Delete</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-between items-center lg:shadow-lg shadow col-span-2 lg:p-6 p-4 lg:mx-16 font-bold justify-content-center">Total Balance : {{this.totalBalance}}</div>
+            <div class="flex justify-between items-center lg:shadow-lg shadow col-span-2 lg:p-6 p-4 lg:mx-16 font-bold justify-content-center">
+              <ul uk-accordion>
+                <li>
+                  <a class="uk-accordion-title" href="#"><i class="icon-feather-plus-square mr-2"></i>Add card   </a>
+                  <div class="uk-accordion-content">
+                    <div style="padding:0px">
+                      <div style="padding:0px" class="lg:p-12 max-w-xl lg:my-0 my-12 mx-auto p-6 space-y-">
+                        <form [formGroup]="CardForm" (ngSubmit)="AddCard()" class="lg:p-10 p-6 space-y-3 relative bg-white shadow-xl rounded-md">
+                          <div>
+                            <label class="mb-0"> Card Number </label>
+                            <input name="CardNumber" formControlName="CardNumber" type="text" maxlength="16" placeholder="Card Number" class="bg-gray-100 dark:bg-gray-700 h-12 mt-2 px-3 rounded-md w-full">
+                          </div>
+                          <div class="grid lg:grid-cols-2 gap-3">
+                            <div>
+                              <label class="mb-0"> Full Name </label>
+                              <input name="FullName" formControlName="FullName" type="text" placeholder="Full Name" class="bg-gray-100 dark:bg-gray-700 h-12 mt-2 px-3 rounded-md w-full">
+                            </div>
+                            <div>
+                              <label class="mb-0"> CCV  </label>
+                              <input name="CCV" formControlName="CCV" type="text" maxlength="4" placeholder="CCV" class="bg-gray-100 dark:bg-gray-700 h-12 mt-2 px-3 rounded-md w-full">
+                            </div>
+                          </div>
+                          <div class="grid lg:grid-cols-2 gap-3">
+                            <div>
+                              <label class="mb-0"> Expiry Month </label>
+                              <input name="ExpiryMonth" formControlName="ExpiryMonth" type="text" maxlength="2" placeholder="Expiry Month" class="bg-gray-100 dark:bg-gray-700 h-12 mt-2 px-3 rounded-md w-full">
+                            </div>
+                            <div>
+                              <label class="mb-0"> Expiry Year  </label>
+                              <input name="ExpiryYear" formControlName="ExpiryYear" type="text" maxlength="2" placeholder="Expiry Year" class="bg-gray-100 dark:bg-gray-700 h-12 mt-2 px-3 rounded-md w-full">
+                            </div>
+                          </div>
+                          <div>
+                            <button [disabled]="!Validator()" type="submit" class="bg-gradient-dark font-semibold p-2 mt-5 rounded-md text-center text-white w-full">
+                              Add
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid lg:grid-cols-2 mt-12 gap-4">
+        <div>
+          <div>
+            <h3 class="text-xl mb-2 font-semibold">Account</h3>
+
+          </div>
+        </div>
+        <div class="bg-white rounded-md lg:shadow-lg shadow col-span-2 lg:p-6 p-4 lg:mx-16">
+          <div class="flex flex-column">
+            <p class="font-bold mb-3">Do you want to delete your account ?</p>
+            <div class="flex">
+              <button style="background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,19,1) 35%, rgba(102,40,55,1) 45%);" id="delete-btn-{{userId}}" uk-toggle="target: #delete-btn" type="button" class="button"> Delete </button>
+            </div>
+
+          </div>
+          <div id="delete-btn" uk-modal>
+            <div class="uk-modal-body uk-modal-dialog rounded-md shadow-2xl">
+              <h2 class="mb-2 uk-modal-title">Alert</h2>
+              <p>Are you sure you want to delete your account <span class="font-bold font-semibold"></span> ?</p>
+              <div class="uk-modal-footer text-right bg-gray-200 dark:bg-gray-900 mt-6 px-0 space-x-1">
+                <button class="button gray uk-modal-close" type="button">Cancel</button>
+                <button style="background-color: #e82a35" (click)="DeleteAccount()" class="button" type="button">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+

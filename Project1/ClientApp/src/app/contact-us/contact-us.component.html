@@ -1,0 +1,110 @@
+ <!-- Main Contents -->
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<div class="main_content" style="margin:0 auto;padding:0px">
+
+  <div class="bg-gradient-to-tr flex from-blue-400 h-52 items-center justify-center lg:h-80  pb-10 relative to-blue-300 via-blue-400 w-full">
+
+    <div class="text-center max-w-xl mx-auto z-10 relative px-5">
+      <div class="lg:text-4xl text-2xl text-white font-semibold mb-3"> Leave a message </div>
+      <div class="text-white text-lg font-medium text-opacity-90"> Contact us if you have any questions about our company   We will try to provide an answer </div>
+    </div>
+  </div>
+
+  <div class="mcontainer">
+
+    <div class="-mt-16 bg-white max-w-4xl mx-auto p-10 relative rounded-md shadow">
+
+      <form class="lg:p-10 p-6 space-y-3 relative bg-white shadow-xl rounded-md" [formGroup]="ContactForm" (ngSubmit)="SendMessage()">
+
+        <div class="grid lg:grid-cols-2 gap-3">
+          <div>
+            <label class="mb-0">  Name </label>
+            <input type="text" name="Name" matInput formControlName="Name" placeholder="Your Name" class="bg-gray-100 h-12 mt-2 px-3 rounded-md w-full" required>
+            <mat-error class="err" *ngIf="ContactForm.controls['Name'].hasError('required')&&(ContactForm.controls['Name'].dirty || ContactForm.controls['Name'].touched)">FirstName is <strong>required</strong></mat-error>
+          </div>
+          <div>
+            <label class="mb-0"> Email </label>
+            <input type="text" name="Email" matInput formControlName="Email" placeholder="Your Email" class="bg-gray-100 h-12 mt-2 px-3 rounded-md w-full" required>
+            <mat-error class="err" *ngIf="ContactForm.controls['Email'].hasError('required')&&(ContactForm.controls['Email'].dirty || ContactForm.controls['Email'].touched)">Email is <strong>required</strong></mat-error>
+            <mat-error class="err" *ngIf="ContactForm.controls['Email'].hasError('email')&&(ContactForm.controls['Email'].dirty || ContactForm.controls['Email'].touched)">Please enter a <strong>valid email</strong></mat-error>
+
+          </div>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-3">
+          <div>
+            <label class="mb-0">Subject </label>
+            <input type="text" name="Subject" matInput formControlName="Subject" placeholder="Your Subject" class="bg-gray-100 h-12 mt-2 px-3 rounded-md w-full" required>
+            <mat-error class="err" *ngIf="ContactForm.controls['Subject'].hasError('required')&&(ContactForm.controls['Subject'].dirty || ContactForm.controls['Subject'].touched)">Subject is <strong>required</strong></mat-error>
+          </div>
+          <div>
+            <label class="mb-0"> Phone number </label>
+            <input type="text" name="Phone" matInput formControlName="Phone" placeholder="Your Phone number" class="bg-gray-100 h-12 mt-2 px-3 rounded-md w-full" required>
+            <mat-error class="err" *ngIf="ContactForm.controls['Phone'].hasError('required')&&(ContactForm.controls['Phone'].dirty || ContactForm.controls['Phone'].touched)">Phone Number is <strong>required</strong></mat-error>
+          </div>
+        </div>
+        <div>
+          <textarea formControlName="Message" placeholder="How can we help?" rows="5" class="with-border md:col-span-2 p-5 px-7 resize-none h-72" required></textarea>
+          <mat-error class="err" *ngIf="ContactForm.controls['Message'].hasError('required')&&(ContactForm.controls['Message'].dirty || ContactForm.controls['Message'].touched)">Message is <strong>required</strong></mat-error>
+        </div>
+        <!--<div class="checkbox">
+          <input type="checkbox" id="chekcbox1" checked="">
+          <label for="chekcbox1">
+            <span class="checkbox-icon"></span> I agree to the <a href="pages-terms.html" target="_blank" class="uk-text-bold uk-text-small uk-link-reset"> Terms and Conditions </a>
+          </label>
+        </div>-->
+
+        <div>
+          <button type="submit" [disabled]="!ContactForm.valid" class="bg-blue-600 font-semibold p-2 mt-5 rounded-md text-center text-white w-full">
+            Send
+          </button>
+        </div>
+      </form>
+
+
+
+
+
+
+    </div>
+
+
+  </div>
+</div>
+
+<!-- Main Contents -->
+<div class="main_content" hidden>
+
+  <div class="w-full lg:h-80 h-52 pb-10 bg-cover flex justify-center items-center relative" data-src="assets/images/group/group-cover-1.jpg" uk-img>
+
+    <div class="text-center max-w-xl mx-auto z-10 relative">
+      <div class="lg:text-4xl text-2xl text text-white font-semibold mb-3"> About Socialite</div>
+      <div class="text-white text-lg font-medium text-opacity-90"> Socialite Is a template for developers who want to start their next social web application UI</div>
+    </div>
+
+    <div class="absolute w-full h-full inset-0 bg-gray-600 bg-opacity-20"> </div>
+
+  </div>
+  <div class="mcontainer">
+
+    <div class="-mt-16 bg-white max-w-3xl mx-auto p-10 relative rounded-md shadow">
+
+      <div class="md:space-y-6 space-y-5 text-gray-400 md:text-base">
+
+        <div class="font-semibold md:text-2xl text-lg text-gray-700">Write about your website here</div>
+        <div class="md:leading-8">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</div>
+
+        <div class="font-semibold md:text-xl text-lg text-gray-700"> Remote is not for everyone</div>
+        <div class="md:leading-8">Laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</div>
+        <div class="md:leading-8">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</div>
+        <div class="md:leading-8">Aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+

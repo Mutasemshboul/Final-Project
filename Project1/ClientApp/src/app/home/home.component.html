@@ -1,0 +1,154 @@
+
+<div class="overflow-x-hidden">
+  <div id="Wrapper">
+
+    <div class="lg:py-40 pt-24 pb-12 relative -mt-20 bg-white" id="home">
+      <div class="banner1">
+        <div class="objectWrapper">
+          <img src="../../../../Resources/Images/{{homeDesign.slideImage1}}" alt="" class="Image__ImageWrapper">
+          <!--<div class="dashboardWrapper">
+            <img src="../../../../Resources/Images/{{homeDesign.slideImage1}}" alt="" class="shadow-2xl">
+          </div>-->
+        </div>
+      </div>
+      <div class="uk-container mx-auto lg:mt-28">
+        <div class="lg:w-5/12 lg:space-y-6 text-center lg:text-left lg:block flex flex-col justify-center items-center">
+
+          <h1 class="font-bold lg:leading-snug lg:text-4xl text-2xl">
+            {{homeDesign.mainText1}}
+          </h1>
+          <p>
+            {{homeDesign.subText1}}
+          </p>
+          <div class="fle">
+            <a [routerLink]="['/register']"
+               class="bg-gradient-to-bl font-semibold from-purple-500 to-blue-600 px-20 py-2 rounded text-sm text-white
+                        hover:shadow-lg hover:text-white ">
+              Get started
+            </a>
+
+           
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div  class="py-10 lg:mb-24 relative" id="demos">
+      <div style="width:100%"  class=" mx-auto">
+
+        <div style="width:100%;margin:0px"  class="bg-gray-100 rounded-xl mx-auto">
+          <div class="flex space-x-15">
+            <div  class="w-full">
+              <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slideshow="animation: push">
+
+                <ul style="margin-top:550px"  class="uk-slideshow-items">
+                  <li *ngFor="let feed of feedback">
+                    <div class="text-center uk-position-top p-5 backdrop-filter backdrop-blur-md">
+                      <img src="../../../../Resources/Images/user/profile/{{feed.profilePath}}" width="300" height="300" alt="" class=" border border-white rounded-full w-20 h-20" style="margin:auto">
+                      <h2 class="font-bold text-2xl dark:text-gray-200 text-gray-600 mt-4">{{feed.firstName}} {{feed.lastName}}</h2>
+                      <div class="text-center uk-position-center p-5 backdrop-filter backdrop-blur-md" style="margin-top:100px;">
+                        <p class="text-lg dark:text-gray-200 text-gray-600"><q>{{feed.feedbackText}}.</q></p>
+                      </div>
+                    </div>
+
+                  </li>
+
+
+                </ul>
+
+                <a hidden class="uk-position-center-left uk-position-small uk-hidden-hover text-white p-4" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                <a hidden class="uk-position-center-right uk-position-small uk-hidden-hover text-white p-4" href="#" uk-slidenav-next uk-slideshow-item="next" id="next"></a>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="uk-child-width-1-3@m uk-child-width-1-2@s uk-flex-center"
+             uk-scrollspy="target: > div; cls: uk-animation-slide-bottom-small; delay: 100" uk-grid>
+
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white" id="features">
+
+      <svg width="100%" height="100px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 2560 100" style="enable-background:new 0 0 2560 100" xml:space="preserve" class="-mt-24 absolute fill-current text-white invisible lg:visible">
+      <polygon points="2560 0 2560 100 0 100"></polygon>
+            </svg>
+
+      <div class="container m-auto  py-20">
+
+        <div class="text-center mb-3">
+          <h1 class="text-3xl font-semibold"> Why Mada </h1>
+          <p class="mt-2">
+            Bring the world to you
+          </p>
+        </div>
+
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 px-4">
+
+          <!-- our first cad -->
+          <div class="rounded p-6">
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-12 h-12 text-blue-500 mb-4 mt-6">
+              <path fill-rule="evenodd" d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z" clip-rule="evenodd"></path>
+            </svg>
+            <h2 class="text-xl font-bold leading-10"> Good price </h2>
+            <h2>
+              <p class="font-medium text-gray-600">
+                Many subscriptions to fit your need,You can choose Ultimate or Gold
+              </p>
+
+            </h2>
+          </div>
+
+          <!-- our first cad -->
+          <div class="rounded p-6">
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-12 h-12 text-blue-500 mb-4 mt-6">
+              <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z">
+              </path>
+            </svg>
+            <h2 class="text-xl font-bold leading-10"> Be the one </h2>
+            <h2>
+              <p class="font-medium text-gray-600">
+                Use the advertisements to reach more people
+              </p>
+
+            </h2>
+          </div>
+
+          <!-- our first cad -->
+          <div class="rounded p-6">
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-12 h-12 text-blue-500 mb-4 mt-6">
+              <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z">
+              </path>
+            </svg>
+            <h2 class="text-xl font-bold leading-10"> Express yourself in many ways </h2>
+            <h2>
+              <p class="font-medium text-gray-600">
+                Whether it is a post,Ad or story, express yourself and let the words take you
+              </p>
+
+            </h2>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+

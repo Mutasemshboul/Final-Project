@@ -1,0 +1,34 @@
+        <!-- Main Contents -->
+
+
+<!--<div class="main_content">-->
+
+  <div class="w-full lg:h-80 h-52 pb-10 bg-cover flex justify-center items-center relative" data-src="assets/assets/images/group/group-cover-1.jpg" uk-img>
+
+    <div class="text-center max-w-xl mx-auto z-10 relative">
+      <div class="lg:text-4xl text-2xl text text-white font-semibold mb-3">{{aboutDesign.mainText1}}</div>
+      <div class="text-white text-lg font-medium text-opacity-90"> {{aboutDesign.subText1}}</div>
+    </div>
+
+    <div class="absolute w-full h-full inset-0  bg-opacity-20" > </div>
+    <img src="../../../../Resources/Images/AboutUs/{{aboutDesign.slideImage1}}" class="absolute w-full h-full inset-0  bg-opacity-20" />
+
+  </div>
+  <div class="mcontainer">
+
+    <div class="-mt-16 bg-white max-w-3xl mx-auto p-10 relative rounded-md shadow">
+
+      <div class="md:space-y-6 space-y-5 text-gray-400 md:text-base">
+
+        <div class="font-semibold md:text-2xl text-lg text-gray-700">{{aboutDesign.mainText2}}</div>
+        <div class="md:leading-8">{{aboutDesign.subText2}}</div>
+
+        <div class="font-semibold md:text-xl text-lg text-gray-700">{{aboutDesign.mainText3}}</div>
+        <div *ngFor="let a of SplitText(aboutDesign.subText3)" class="md:leading-8">{{a}}</div>
+
+      </div>
+
+    </div>
+
+  </div>
+<!--</div>-->
